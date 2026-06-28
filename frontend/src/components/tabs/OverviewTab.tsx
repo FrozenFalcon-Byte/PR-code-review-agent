@@ -7,13 +7,6 @@ interface OverviewTabProps {
 
 const SEVERITY_ORDER: Severity[] = ['critical', 'high', 'medium', 'low'];
 
-const SEVERITY_COLORS: Record<Severity, string> = {
-  critical: 'var(--critical)',
-  high: 'var(--high)',
-  medium: 'var(--medium)',
-  low: 'var(--low)',
-};
-
 export default function OverviewTab({ review, conflicts }: OverviewTabProps) {
   const severityCounts = SEVERITY_ORDER.map(sev => ({
     severity: sev,
@@ -22,7 +15,6 @@ export default function OverviewTab({ review, conflicts }: OverviewTabProps) {
       ...review.security_issues.filter(s => s.severity === sev),
     ].length,
   }));
-  const maxCount = Math.max(...severityCounts.map(s => s.count), 1);
 
   const bugCount = review.bugs.length;
   const securityCount = review.security_issues.length;

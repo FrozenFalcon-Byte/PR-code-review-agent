@@ -8,7 +8,6 @@ import EndpointsTable from './components/EndpointsTable';
 import Footer from './components/Footer';
 import {
   healthCheck,
-  reviewFull,
   reviewOnly,
   reviewConflicts,
   reviewWithPrompt,
@@ -129,7 +128,7 @@ function AppContent() {
       const prMatch = url.match(/github\.com\/([^/]+\/[^/]+)\/pull\/(\d+)/);
       if (prMatch) {
         const sevCounts = { critical: 0, high: 0, medium: 0, low: 0 };
-        for (const issue of localReview?.issues ?? []) {
+        for (const issue of [...(localReview?.bugs ?? []), ...(localReview?.security_issues ?? [])]) {
           const s = issue.severity?.toLowerCase() as keyof typeof sevCounts;
           if (s in sevCounts) sevCounts[s]++;
         }
