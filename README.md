@@ -23,17 +23,17 @@ An autonomous GitHub pull request review tool powered by LangChain and a choice 
 
 ```
 ┌─────────────────────────────────────────────┐
-│              React Frontend (Vite)           │
+│              React Frontend (Vite)          │
 │                                             │
 │  HeroSection   AnalyzeSection   ResultTabs  │
 │  RecentReviews                              │
 │     ├── ReviewTab   (bugs / security / sug) │
-│     ├── ConflictTab (per-file conflict info) │
+│     ├── ConflictTab (per-file conflict info)│
 │     └── PromptTab   (AI prompt + code gen)  │
 └──────────────────┬──────────────────────────┘
                    │ HTTP / SSE
 ┌──────────────────▼──────────────────────────┐
-│              FastAPI Backend                 │
+│              FastAPI Backend                │
 │                                             │
 │  /review/stream   → SSE log + result        │
 │  /review/full     → parallel review+conflict│
@@ -42,9 +42,9 @@ An autonomous GitHub pull request review tool powered by LangChain and a choice 
 └──────────────────┬──────────────────────────┘
                    │ LangChain
 ┌──────────────────▼──────────────────────────┐
-│         LLM Provider (your choice)           │
-│   Gemini · Groq · OpenRouter · Ollama        │
-│   Cerebras                                   │
+│         LLM Provider (your choice)          │
+│   Gemini · Groq · OpenRouter · Ollama       │
+│   Cerebras                                  │
 └─────────────────────────────────────────────┘
 ```
 
