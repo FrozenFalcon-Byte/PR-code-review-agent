@@ -1,0 +1,16 @@
+requests
+rich
+python-dotenv
+fastapi
+uvicorn
+pydantic
+
+# LangChain core
+langchain
+langchain-core
+
+# Model providers — install whichever you use
+langchain-google-genai   # Gemini
+langchain-groq           # Groq
+langchain-ollama         # Ollama (local)
+langchain-openai         # OpenRouter (free models, recommended)
