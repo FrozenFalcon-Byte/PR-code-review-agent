@@ -33,6 +33,7 @@ function AppContent() {
   const [review, setReview] = useState<ReviewOutput | undefined>();
   const [conflicts, setConflicts] = useState<ConflictReport | undefined>();
   const [agentPrompt, setAgentPrompt] = useState<string | undefined>();
+  const [prUrl, setPrUrl] = useState<string | undefined>();
   const [hasResults, setHasResults] = useState(false);
 
   const [selectedEndpoint, setSelectedEndpoint] = useState<EndpointType>('full');
@@ -72,6 +73,7 @@ function AppContent() {
     setReview(undefined);
     setConflicts(undefined);
     setAgentPrompt(undefined);
+    setPrUrl(url);
     setHasResults(false);
     setStreamLogs([]);
     setLoadingStep('Fetching PR diff...');
@@ -207,6 +209,7 @@ function AppContent() {
             review={review}
             conflicts={conflicts}
             agentPrompt={agentPrompt}
+            prUrl={prUrl}
           />
         )}
         <HowItWorks />

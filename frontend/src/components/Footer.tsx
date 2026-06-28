@@ -30,7 +30,7 @@ export default function Footer({ isBackendOnline }: FooterProps) {
             <span className="status-text">
               {isBackendOnline ? 'Backend running' : 'Backend offline'}
             </span>
-            <code className="status-url">localhost:8000</code>
+            {/* <code className="status-url"></code> */}
           </div>
         </div>
       </div>

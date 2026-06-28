@@ -9,11 +9,12 @@ interface ResultsDashboardProps {
   review?: ReviewOutput;
   conflicts?: ConflictReport;
   agentPrompt?: string;
+  prUrl?: string;
 }
 
 type Tab = 'overview' | 'review' | 'conflicts' | 'prompt';
 
-export default function ResultsDashboard({ review, conflicts, agentPrompt }: ResultsDashboardProps) {
+export default function ResultsDashboard({ review, conflicts, agentPrompt, prUrl }: ResultsDashboardProps) {
   const [activeTab, setActiveTab] = useState<Tab>('overview');
 
   const tabs: { key: Tab; label: string; available: boolean }[] = [
@@ -26,7 +27,7 @@ export default function ResultsDashboard({ review, conflicts, agentPrompt }: Res
   async function handleExportPdf() {
     if (!review) return;
     const { exportReviewPdf } = await import('../utils/exportPdf');
-    exportReviewPdf(review, conflicts, agentPrompt);
+    exportReviewPdf(review, conflicts, agentPrompt, prUrl);
   }
 
   return (
