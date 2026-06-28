@@ -591,6 +591,44 @@ main {
   background: var(--bg);
 }
 
+.results-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  gap: 1rem;
+}
+
+.results-header .section-title {
+  margin-bottom: 0;
+}
+
+.export-pdf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, transform 0.1s;
+  flex-shrink: 0;
+}
+
+.export-pdf-btn:hover {
+  background: var(--primary-dark, #4f46e5);
+  transform: translateY(-1px);
+}
+
+.export-pdf-btn:active {
+  transform: translateY(0);
+}
+
 .tabs {
   display: flex;
   gap: 4px;
