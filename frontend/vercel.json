@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    { "source": "/review/:path*", "destination": "/api/index.py" },
+    { "source": "/review",        "destination": "/api/index.py" },
+    { "source": "/health",        "destination": "/api/index.py" },
+    { "source": "/(.*)",          "destination": "/index.html" }
+  ]
+}
